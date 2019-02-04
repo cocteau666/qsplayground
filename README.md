@@ -3,7 +3,10 @@ This is a tool for Q# throughout a web access written in python3 with Flask
 
 ## How to use
 
-Before, python3 and Flask library.
+First, install dotnet command and Q# SDK.
+[QS](https://docs.microsoft.com/en-us/quantum/install-guide/command-line?view=qsharp-preview)
+
+Next, python3 and Flask library.
 To install Flask, use pip.
     $ pip install Flask
 
