@@ -8,12 +8,14 @@ First, install dotnet command and Q# SDK. See
 
 Next, python3 and Flask library.
 To install Flask, use pip.
-    pip install Flask
+
+    $ pip install Flask
 
 To set dotnet command path, change a variable "dotnet_command_path" in dotnetqs.py.
 
 To run, do this.
-    python3 dotnetqs.py
+
+    $ python3 dotnetqs.py
 
 To use, access from Web browser and port 5000/TCP.
 
