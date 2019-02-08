@@ -30,6 +30,9 @@ To use, access from Web browser and port 5000/TCP.
 ### build project
     http://hostname:5000/build?ProjectName
 
+### delete project
+    http://hostname:5000/delete?ProjectName
+
 ### Read Driver.cs (GET method)
     http://hostname:5000/driver?ProjectName
 

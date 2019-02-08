@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 import subprocess
 import os
+import shutil
 
 dotnet_command_path = "/usr/local/bin/dotnet"
 
@@ -26,6 +27,13 @@ def create():
   path = request.query_string
   output = subprocess.check_output([dotnet_command_path, "new", "console", "-lang", "Q#", "--output", path])
   return output
+
+@app.route('/delete')
+def delete():
+  path = request.query_string
+  if path != "templates" and path != "static" and path != ".git":
+    shutil.rmtree(path)
+  return "delete complete"
 
 @app.route('/build')
 def build():
