@@ -27,7 +27,15 @@ To use, access from Web browser and port 5000/TCP.
 ### build project
     http://hostname:5000/build?ProjectName
 
-### Override Driver.cs
+### Read Driver.cs (GET method)
+    http://hostname:5000/driver?ProjectName
 
-### Override Operations.qs
+### Override Driver.cs (POST method)
+    http://hostname:5000/driver?ProjectName
+
+### Read Operations.qs (GET method)
+    http://hostname:5000/operations?ProjectName
+
+### Override Operations.qs (POST method)
+    http://hostname:5000/operations?ProjectName
 

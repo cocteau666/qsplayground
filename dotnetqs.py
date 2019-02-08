@@ -1,13 +1,16 @@
 # coding: utf-8
 
-from flask import Flask
-from flask import request
+from flask import Flask, request, render_template
 app = Flask(__name__)
 
 import subprocess
 import os
 
-dotnet_command_path = "/usr/local/share/dotnet/dotnet"
+dotnet_command_path = "/usr/local/bin/dotnet"
+
+@app.route('/')
+def main_page():
+  return render_template("index.html")
 
 @app.route('/create')
 def create():
@@ -23,13 +26,45 @@ def build():
   os.chdir("../")
   return output
 
-@app.route('/editdriver')
-def editdriver():
-  return ""
+@app.route('/driver', methods=["GET", "POST"])
+def driver():
+  if request.method == "GET":
+    path = request.query_string
+    os.chdir(path)
+    driver = open("Driver.cs", "r")
+    contents = driver.read()
+    driver.close()
+    os.chdir("../")
+    return contents
+  else:
+    s = request.form["s"]
+    path = request.query_string
+    os.chdir(path)
+    driver = open("Driver.cs", "w")
+    driver.write(s)
+    driver.close()
+    os.chdir("../")
+    return "save change"
 
-@app.route('/editoperations')
-def editoperations():
-  return ""
+@app.route('/operations', methods=["GET", "POST"])
+def operations():
+  if request.method == "GET":
+    path = request.query_string
+    os.chdir(path)
+    operations = open("Operations.qs", "r")
+    contents = operations.read()
+    operations.close()
+    os.chdir("../")
+    return contents
+  else:
+    s = request.form["s"]
+    path = request.query_string
+    os.chdir(path)
+    operations = open("Operations.qs", "w")
+    operations.write(s)
+    operations.close()
+    os.chdir("../")
+    return "save change"
 
 if __name__ == "__main__":
   app.run()
