@@ -12,6 +12,15 @@ dotnet_command_path = "/usr/local/bin/dotnet"
 def main_page():
   return render_template("index.html")
 
+@app.route('/list')
+def list():
+  files = os.listdir(".")
+  files_dir = [f for f in files if os.path.isdir(os.path.join(".", f))]
+  files_dir.remove('static')
+  files_dir.remove('templates')
+  files_dir.remove('.git')
+  return ",".join(files_dir)
+
 @app.route('/create')
 def create():
   path = request.query_string
