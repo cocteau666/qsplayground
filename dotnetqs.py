@@ -46,7 +46,7 @@ def driver():
     os.chdir("../")
     return contents
   else:
-    s = request.form["s"]
+    s = request.form['s']
     path = request.query_string
     os.chdir(path)
     driver = open("Driver.cs", "w")
@@ -66,7 +66,7 @@ def operations():
     os.chdir("../")
     return contents
   else:
-    s = request.form["s"]
+    s = request.form['s']
     path = request.query_string
     os.chdir(path)
     operations = open("Operations.qs", "w")
