@@ -9,7 +9,7 @@
 <body>
 <div id="CreateProject">
   <input type="text" id="NewProjectName">
-  <input type="button" value="create" onClick="currentProjectName = document.getElementById('NewProjectName').value; createProject(currentProjectName);getDriverCode(currentProjectName);getOperationsCode(currentProjectName);document.getElementById('NewProjectName').value = '';getProjectList();">
+  <input type="button" value="create" onClick="currentProjectName = document.getElementById('NewProjectName').value; createProject(currentProjectName);getDriverCode(currentProjectName);getOperationsCode(currentProjectName);document.getElementById('NewProjectName').value = '';getProjectList();document.getElementById('BuildConsole').innerHTML='';">
 </div>
 <div id="ProjectList"></div>
 <div id="RunProject">
