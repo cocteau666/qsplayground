@@ -48,7 +48,6 @@ function buildCode(projectName) {
     }
   }
   request.open("GET", `/build?${projectName}`, false);
-  request.timeout = 120000;
   request.send();
 }
 
