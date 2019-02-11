@@ -1,6 +1,8 @@
 # coding: utf-8
 
 from flask import Flask, request, render_template
+from datetime import timedelta
+
 app = Flask(__name__)
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
 
