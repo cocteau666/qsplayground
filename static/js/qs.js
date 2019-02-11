@@ -1,4 +1,4 @@
-function list() {
+function getProjectList() {
   const request = new XMLHttpRequest();
   request.open("GET","/list");
   request.addEventListener("load", (event) => {
@@ -7,7 +7,7 @@ function list() {
   request.send();
 }
 
-function create(projectName) {
+function createProject(projectName) {
   const request = new XMLHttpRequest();
   request.open("GET", `/create?${projectName}`);
   request.addEventListener("load", (event) => {
