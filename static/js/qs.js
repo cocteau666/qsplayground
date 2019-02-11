@@ -1,18 +1,27 @@
+const request = new XMLHttpRequest();
+
 function getProjectList() {
-  const request = new XMLHttpRequest();
-  request.open("GET","/list");
-  request.addEventListener("load", (event) => {
-    document.getElementById('ProjectList').innerHTML = event.target.responseText;
-  });
+  request.onreadystatechange = function() {
+    if (request.status == 4) {
+      if (request.status == 200) {
+        console.log(request.responseText);
+        document.getElementById('ProjectList').innerHTML = request.responseText;
+      }
+    }
+  }
+  request.open("GET", "/list", false);
   request.send();
 }
 
 function createProject(projectName) {
-  const request = new XMLHttpRequest();
-  request.open("GET", `/create?${projectName}`);
-  request.addEventListener("load", (event) => {
-    console.log(event.target.responseText);
-  });
+  request.onreadystatechange = function() {
+    if (request.status == 4) {
+      if (request.status == 200) {
+        console.log(request.responseText);
+      }
+    }
+  }
+  request.open("GET", `/create?${projectName}`, false);
   request.send();
 }
 
