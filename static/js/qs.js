@@ -2,7 +2,7 @@ function list() {
   const request = new XMLHttpRequest();
   request.open("GET","/list");
   request.addEventListener("load", (event) => {
-    console.log(event.target.responseText);
+    document.getElementById('ProjectList').text = event.target.responseText;
   });
   request.send();
 }
