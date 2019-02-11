@@ -3,15 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/static/css/style.css">
+<script type="javascript" src="/static/js/qs.js"></script>
 <title>Q# PlayGround</title>
 </head>
 <body>
-<div id="ProjectList">Project List</div>
-<div id="CreateProject">Create Project</div>
+<div id="CreateProject">
+  <input type="text" id="NewProjectName">
+  <input type="button" value="create" onClick="create(document.getElementById('NewProjectName').value;list();">
+</div>
+<div id="ProjectList"></div>
 <div id="RunProject">
-<div id="DriverSource">Driver</div>
-<div id="OperationsSource">Operations</div>
-<div id="BuildButton">Bulid</div>
+  <div id="DriverSource">Driver</div>
+  <div id="OperationsSource">Operations</div>
+  <div id="BuildButton">Bulid</div>
 </div>
 </body>
 </html>
