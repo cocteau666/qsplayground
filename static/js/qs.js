@@ -40,3 +40,14 @@ function getOperationsCode(projectName) {
   request.open("GET", `/operations?${projectName}`, false);
   request.send();
 }
+
+function buildCode(projectName) {
+  request.onreadystatechange = function() {
+    if (request.status == 200) {
+      document.getElementById('BuildConsole').innerHTML = request.responseText;
+    }
+  }
+  request.open("GET", `/build?${projectName}`, false);
+  request.send();
+}
+

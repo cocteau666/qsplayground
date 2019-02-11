@@ -9,16 +9,20 @@
 <body>
 <div id="CreateProject">
   <input type="text" id="NewProjectName">
-  <input type="button" value="create" onClick="createProject(document.getElementById('NewProjectName').value);getDriverCode(document.getElementById('NewProjectName').value);getOperationsCode(document.getElementById('NewProjectName').value);document.getElementById('NewProjectName').value = '';getProjectList();">
+  <input type="button" value="create" onClick="currentProjectName = document.getElementById('NewProjectName').value; createProject(currentProjectName);getDriverCode(currentProjectName);getOperationsCode(currentProjectName);document.getElementById('NewProjectName').value = '';getProjectList();">
 </div>
 <div id="ProjectList"></div>
 <div id="RunProject">
   <div id="Driver">Driver</div>
   <div id="Operations">Operations</div>
-  <div id="BuildButton">Bulid</div>
+  <div id="BuildButton">
+    <input type="button" value="build and run" onClick="buildCode(currentProjectName);">
+  </div>
 </div>
+<div id="BuildConsole"></div>
 </body>
 <script type="text/javascript">
+var currentProjectName = "";
 getProjectList();
 </script>
 </html>
