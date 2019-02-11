@@ -2,7 +2,7 @@ function getProjectList() {
   const request = new XMLHttpRequest();
   request.open("GET","/list");
   request.addEventListener("load", (event) => {
-    document.getElementById('ProjectList').text = event.target.responseText;
+    document.getElementById('ProjectList').innerHTML = event.target.responseText;
   });
   request.send();
 }
