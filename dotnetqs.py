@@ -2,6 +2,7 @@
 
 from flask import Flask, request, render_template
 app = Flask(__name__)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=5)
 
 import subprocess
 import os
