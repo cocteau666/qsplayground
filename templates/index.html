@@ -23,7 +23,7 @@
     <textarea id="Operations" cols="50" rows="15"></textarea>
   </div>
   <div id="BuildButton">
-    <input type="button" value="build and run" onClick="buildCode(currentProjectName);">
+    <input type="button" value="build and run" onClick="updateDriverCode(currentProjectName);updateOperationsCode(currentProjectName);buildCode(currentProjectName);">
   </div>
 </div>
 <label for="BuildConsole">Result:</label><div id="BuildConsole"i style="border:#d0d0d0 solid 1px;"></div>
