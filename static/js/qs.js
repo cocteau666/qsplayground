@@ -51,7 +51,7 @@ function buildCode(projectName) {
   request.send();
 }
 
-function updateDriverCode(ProjectName) {
+function updateDriverCode(projectName) {
   request.onreadystatechange = function() {
     if (request.status == 200) {
       console.log("1");;
@@ -64,7 +64,7 @@ function updateDriverCode(ProjectName) {
   request.abort();
 }
 
-function updateOperationsCode(ProjectName) {
+function updateOperationsCode(projectName) {
   request.onreadystatechange = function() {
     if (request.status == 200) {
       console.log("1");;
