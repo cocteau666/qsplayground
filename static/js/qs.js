@@ -51,3 +51,28 @@ function buildCode(projectName) {
   request.send();
 }
 
+function updateDriverCode(ProjectName) {
+  request.onreadystatechange = function() {
+    if (request.status == 200) {
+      console.log("1");;
+    }
+  }
+  request.open("POST", `/driver?${projectName}`, false);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  driverCode = document.getElementById('Driver').value;
+  request.send('s=' + driverCode);
+  request.abort();
+}
+
+function updateOperationsCode(ProjectName) {
+  request.onreadystatechange = function() {
+    if (request.status == 200) {
+      console.log("1");;
+    }
+  }
+  request.open("POST", `/operations?${projectName}`, false);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  operationsCode = document.getElementById('Operations').value;
+  request.send('s=' + operationsCode);
+  request.abort();
+}
