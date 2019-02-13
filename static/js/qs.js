@@ -24,7 +24,7 @@ function createProject(projectName) {
 function getDriverCode(projectName) {
   request.onreadystatechange = function() {
     if (request.status == 200) {
-      document.getElementById('Driver').innerHTML = request.responseText;
+      document.getElementById('Driver').value = request.responseText;
     }
   }
   request.open("GET", `/driver?${projectName}`, false);
@@ -34,7 +34,7 @@ function getDriverCode(projectName) {
 function getOperationsCode(projectName) {
   request.onreadystatechange = function() {
     if (request.status == 200) {
-      document.getElementById('Operations').innerHTML = request.responseText;
+      document.getElementById('Operations').value = request.responseText;
     }
   }
   request.open("GET", `/operations?${projectName}`, false);
