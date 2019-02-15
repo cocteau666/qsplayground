@@ -1,0 +1,46 @@
+#TitleBox {
+    margin: 0 auto 10px;
+    width: 90%;
+    height: 30px;
+    padding: 10px 0;
+}
+
+#CreateProject {
+    width: 370px;
+    margin:0;
+}
+
+#ProjectList {
+}
+
+#container {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "TestBox ResultBox";
+    grid-gap: 50px;
+}
+
+#container textarea {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    #container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "TestBox"
+        "ResultBox";
+        grid-gap: 10px;
+    }
+  }
+
+#TestBox {
+    grid-area: TestBox;
+}
+#ResultBox {
+    grid-area: ResultBox;
+}
+
