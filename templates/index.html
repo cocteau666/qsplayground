@@ -2,31 +2,41 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/static/css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="static/css/style.css">
 <script type="text/javascript" src="/static/js/qs.js"></script>
 <title>Q# PlayGround</title>
 </head>
 <body>
-<div id="CreateProject">
-  <label for="NewProjectName">ProjectName:</label>
-  <input type="text" id="NewProjectName">
-  <input type="button" value="create" onClick="currentProjectName = document.getElementById('NewProjectName').value; createProject(currentProjectName);getDriverCode(currentProjectName);getOperationsCode(currentProjectName);document.getElementById('NewProjectName').value = '';getProjectList();document.getElementById('BuildConsole').innerHTML='';">
+<div id="TitleBox">
+    <div id="CreateProject">
+        <label for="NewProjectName">ProjectName:</label>
+        <input type="text" id="NewProjectName">
+        <input type="button" value="create" onClick="currentProjectName = document.getElementById('NewProjectName').value; createProject(currentProjectName);getDriverCode(currentProjectName);getOperationsCode(currentProjectName);document.getElementById('NewProjectName').value = '';getProjectList();document.getElementById('BuildConsole').innerHTML='';">
+    </div>
+    <div id="ProjectList"></div>
 </div>
-<div id="ProjectList"></div>
-<div id="RunProject">
-  <div id="DriverSource">
-    <label for="Driver">Driver.cs</label><br>
-    <textarea id="Driver" cols="50" rows="25"></textarea>
+<div id="container">
+  <div id="TestBox">
+        <div id="RunProject">
+          <div id="DriverSource">
+            <label for="Driver">Driver.cs</label><br>
+            <textarea id="Driver" cols="50" rows="25"></textarea>
+          </div>
+          <div id="OperationsSource">
+            <label for="Operations">Operations.qs</label><br>
+            <textarea id="Operations" cols="50" rows="15"></textarea>
+          </div>
+          <div id="BuildButton">
+            <input type="button" value="build and run" onClick="updateDriverCode(currentProjectName);updateOperationsCode(currentProjectName);buildCode(currentProjectName);">
+          </div>
+        </div>
   </div>
-  <div id="OperationsSource">
-    <label for="Operations">Operations.qs</label><br>
-    <textarea id="Operations" cols="50" rows="15"></textarea>
-  </div>
-  <div id="BuildButton">
-    <input type="button" value="build and run" onClick="updateDriverCode(currentProjectName);updateOperationsCode(currentProjectName);buildCode(currentProjectName);">
+  <div id="ResultBox">
+    <label for="BuildConsole">Result:</label>
+    <div id="BuildConsole"i style="border:#d0d0d0 solid 1px;"></div>
   </div>
 </div>
-<label for="BuildConsole">Result:</label><div id="BuildConsole"i style="border:#d0d0d0 solid 1px;"></div>
 </body>
 <script type="text/javascript">
 var currentProjectName = "";
